@@ -1829,7 +1829,7 @@ void explodeStdAnyTLS(std::string anytls, Proxy &node) {
     // 其他参数
     sni = getUrlArg(addition, "peer");
     alpn = getUrlArg(addition, "alpn");
-    fingerprint = getUrlArg(addition, "hpkp");
+    fingerprint = urlDecode(getUrlArg(addition, "hpkp"));
     tfo = tribool(getUrlArg(addition, "tfo"));
     scv = tribool(getUrlArg(addition, "insecure"));
 
